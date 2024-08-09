@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cow Detection</title>
+</head>
+<body>
+    <h1>Cow Detection</h1>
+    <form id="uploadForm" action="http://localhost:5000/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*">
+        <button type="submit">Upload Image</button>
+    </form>
+    <br>
+    <div id="results"></div>
+    <br>
+    <div id="count"><h1></h1></div>
+    <img id="annotated_image" src="" style="display:none; max-width: 100%;">
+    <br>
+    <div id="textResults" ></div> <!-- Container for displaying extracted text -->
+    
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const response = await fetch(this.action, {
+                method: 'POST',
+                body: formData
+            });
+            const data = await response.json();
+            displayResults(data);
+        });
+        
+        function displayResults(data) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '<h2>Detection Results:</h2>';
+            let detectedCowCount = 0;
+            let detectedCageNumber = null;
+            
+            data.results.forEach(result => {
+                resultsDiv.innerHTML += `<p>${result.name}: Confidence ${result.confidence.toFixed(2)}</p>`;
+                
+                if (result.name.toLowerCase() === 'cow') {
+                    detectedCowCount += 1;
+                }
+            });
+        
+            // Extracting the detected cage number from the text
+            const textResultsDiv = document.getElementById('textResults');
+            textResultsDiv.innerHTML = '<h2>Extracted Text:</h2>';
+            data.text_results.forEach(text => {
+                textResultsDiv.innerHTML += `<p>Cage Number : ${text.text}</p>`;
+                detectedCageNumber = text.text; // assuming only one cage number is detected
+            });
+        
+            document.getElementById('count').querySelector('h1').innerHTML = `Detected Cow count: ${detectedCowCount}`;
+            
+            const annotatedImage = document.getElementById('annotated_image');
+            annotatedImage.src = data.annotated_image_url;
+            annotatedImage.style.display = 'block';
+        
+            if (detectedCageNumber) {
+                fetchCowCountFromDatabase(detectedCageNumber, detectedCowCount);
+            } else {
+                resultsDiv.innerHTML += "<p>No cage number detected.</p>";
+            }
+        }
+        
+        function fetchCowCountFromDatabase(cageNumber, detectedCowCount) {
+            fetch('fetch_cow_count.php?cage=' + cageNumber)
+                .then(response => response.json())
+                .then(data => {
+                    const actualCowCount = data.actualCowCount;
+                    const comparisonResult = actualCowCount == detectedCowCount ?  //checking equal or not counts
+                        "All cows are in the cage." : 
+                        `Mismatch: Detected ${detectedCowCount}, Actual ${actualCowCount}`;
+                    
+                    const resultsDiv = document.getElementById('results');
+                    resultsDiv.innerHTML += `<p>${comparisonResult}</p>`;
+                });
+        }
+        
+    </script>
+</body>
+</html>
