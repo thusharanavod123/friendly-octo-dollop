@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Doctor Location</title>
+</head>
+<body>
+    <h1>Save Doctor Location</h1>
+    <form id="doctor-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="latitude">Latitude:</label>
+        <input type="text" id="latitude" name="latitude" required>
+        <label for="longitude">Longitude:</label>
+        <input type="text" id="longitude" name="longitude" required>
+        <button type="submit">Save</button>
+
+    </form>
+
+    <button>
+        <a href="cowcage.html">Entering cow number for cages</a>
+    </button>
+    <button>
+        <a href="nearby_doctor.html">Find nearby vets</a>
+    </button>
+
+    <script>
+        document.getElementById('doctor-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(this);
+            fetch('save_doctor.php', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.text())
+              .then(data => alert(data));
+        });
+    </script>
+</body>
+</html>
