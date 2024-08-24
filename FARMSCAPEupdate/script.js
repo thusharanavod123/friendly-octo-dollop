@@ -257,3 +257,51 @@ document.getElementById('career-image3').addEventListener('change', function() {
 
 
 
+// Function to simulate image processing and show popup message
+function processCowImage() {
+    const cageNumber = document.getElementById("cow-cage-number").value;
+    const imageUpload = document.getElementById("cow-image-upload").files[0];
+
+    // Show popup if inputs are missing
+    if (!cageNumber || !imageUpload) {
+        showPopup("🚨 First, you need to add a photo and enter a cage number!");
+        return;
+    }
+
+    // Simulate ML processing result (for demo purpose)
+    const allAnimalsInCage = Math.random() > 0.5;
+    const missingCows = Math.floor(Math.random() * 5) + 1; // Simulate a random number of missing cows
+
+    // Show result popup message
+    if (allAnimalsInCage) {
+        showPopup(`🐄 All cows are in Cage ${cageNumber}.`);
+    } else {
+        showPopup(`🚨 Not all cows are here. ${missingCows} cow(s) are missing in Cage ${cageNumber}!`);
+    }
+}
+
+// Function to display a popup with a specific message
+function showPopup(message) {
+    const popup = document.getElementById("cow-popup");
+    const popupMessage = document.getElementById("cow-popup-message");
+    
+    popupMessage.textContent = message;
+    popup.classList.remove("hidden");
+    popup.style.display = "block";
+}
+
+// Function to close the popup
+function closeCowPopup() {
+    const popup = document.getElementById("cow-popup");
+    popup.classList.add("hidden");
+    popup.style.display = "none";
+}
+
+// Function to reset the form
+function resetCowForm() {
+    document.getElementById("cow-cage-number").value = "";
+    document.getElementById("cow-image-upload").value = "";
+    closeCowPopup();
+}
+
+
