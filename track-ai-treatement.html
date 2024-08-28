@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track AI Treatment Progress</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Track AI Treatment Progress for Cows</h1>
+
+        <form action="/submit-treatment-progress" method="POST">
+            <div class="form-group">
+                <label for="cow-id">Cow ID:</label>
+                <input type="text" id="cow-id" name="cow_id" placeholder="Enter Cow ID" required>
+            </div>
+
+            <div class="form-group">
+                <label for="treatment-date">Treatment Date:</label>
+                <input type="date" id="treatment-date" name="treatment_date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="treatment-type">Treatment Type:</label>
+                <select id="treatment-type" name="treatment_type" required>
+                    <option value="artificial_insemination">Artificial Insemination</option>
+                    <option value="pregnancy_check">Pregnancy Check</option>
+                    <option value="vaccination">Vaccination</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="health-status">Health Status:</label>
+                <select id="health-status" name="health_status" required>
+                    <option value="healthy">Healthy</option>
+                    <option value="under_treatment">Under Treatment</option>
+                    <option value="recovered">Recovered</option>
+                    <option value="critical">Critical</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Enter additional comments"></textarea>
+            </div>
+
+            <button type="submit" class="btn">Submit Progress</button>
+        </form>
+    </div>
+
+</body>
+</html>
+

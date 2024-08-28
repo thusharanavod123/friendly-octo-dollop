@@ -1,0 +1,80 @@
+/* Reset body margins and padding */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://kj1bcdn.b-cdn.net/media/59396/milk-production-1.jpg?format=webp&width=350'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Container styling for the form */
+.container {
+    width: 60%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    border-radius: 10px; /* Slight rounding of corners */
+}
+
+/* Heading styles */
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Label styles */
+label {
+    font-weight: bold;
+    color: #555;
+}
+
+/* Input, select, textarea styling */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Form group margin */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Submit button styling */
+.btn {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Button hover effect */
+.btn:hover {
+    background-color: #218838;
+}
+
+/* Adjust container for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+}
