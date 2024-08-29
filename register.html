@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    body {
+      background-image: url('https://cms.groupeditors.com/img/11b27b29-d644-4d25-a99f-69c60e49ad83.jpg');
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      flex-direction: column;
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      width: 90%;
+      max-width: 500px;
+    }
+    #google_translate_element {
+      position: absolute;
+      top: 10px;
+      left: 100px; /* Adjust as needed to avoid overlap with .top-left-message */
+    }
+    .header {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      margin-bottom: 20px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 0; /* Hide the text "FarmScap" */
+    }
+    .logo {
+      /* Add styles for your logo image here */
+      width: 200px; /* Adjust width as needed */
+      height: auto;
+      margin: 0 auto; /* Center the logo horizontally */
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: maroon;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: rgb(0, 83, 139);
+    }
+  </style>
+  <div id="google_translate_element"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+  <div class="header">
+    <img src="images/logo1.png" alt="Your Company Logo" class="logo">  </div>
+  <div class="container">
+    <form action="register.php" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br> 
+      <label for="email">Email:</label>
+ <input type="email" id="email" name="email" required><br>
+
+ <label for="password">Password:</label>
+ <input type="password" id="password" name="password" required><br>
+
+ <label for="contact_number">Contact Number:</label>
+ <input type="tel" id="contact_number" name="contact_number" required><br>
+
+ <label for="role">Role:</label>
+ <select id="role" name="role" required>
+ <option value="farmer">Farmer</option>
+<option value="vet">Veterinarian</option>
+ <option value="AI technician">AI technician</option>
+                <option value="admin">Admin</option>
+ </select><br>
+
+ <input type="submit" value="Register">
+ </form>
+ </div>
+ <script> var Weglot = {"api_key":"YOUR_API_KEY"};</script>
+ <script src="https://cdn.weglot.com/weglot.min.js"></script>
+
+</body>
+</html>

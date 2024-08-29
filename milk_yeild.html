@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyze Milk Yield</title>
+    <link rel="stylesheet" href="style2.css"> <!-- External stylesheet for better management -->
+    
+</head>
+<body>
+
+    <div class="container">
+        <h1>Analyze Milk Yield for Cows</h1>
+
+        <form action="/submit-milk-yield" method="POST">
+            <!-- Cow ID input field -->
+            <div class="form-group">
+                <label for="cow-id">Cow ID:</label>
+                <input type="text" id="cow-id" name="cow_id" placeholder="Enter Cow ID" required>
+            </div>
+
+            <!-- Date input field -->
+            <div class="form-group">
+                <label for="date">Date of Yield:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <!-- Milk Quantity input field -->
+            <div class="form-group">
+                <label for="quantity">Quantity of Milk (Liters):</label>
+                <input type="number" id="quantity" name="quantity" min="0" step="0.1" placeholder="Enter Milk Quantity" required>
+            </div>
+
+            <!-- Health Status input field -->
+            <div class="form-group">
+                <label for="health-status">Health Status of Cow:</label>
+                <select id="health-status" name="health_status" required>
+                    <option value="healthy">Healthy</option>
+                    <option value="under_treatment">Under Treatment</option>
+                    <option value="recovered">Recovered</option>
+                    <option value="critical">Critical</option>
+                </select>
+            </div>
+
+            <!-- Comments input field -->
+            <div class="form-group">
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Enter additional comments"></textarea>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn">Submit Yield</button>
+        </form>
+    </div>
+
+</body>
+</html>

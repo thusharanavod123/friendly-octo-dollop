@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 140px;
+    background: url('https://www.dairyglobal.net/app/uploads/2022/11/IMG_pri413653hLR.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    position: relative;
+}
+
+.top-left-message {
+    position: absolute;
+    top: 50px;
+    left: 500px;
+    font-weight: bold;
+    font-style: italic;
+    color: black;
+    font-size: 60px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    width: 40%; /* Adjust the width as needed */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px 0;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+.bold-label {
+    font-weight: bold;
+}
+
+.submit-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    background-color: maroon;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#google_translate_element {
+    position: absolute;
+    top: 10px;
+    left: 100px; /* Adjust as needed to avoid overlap with .top-left-message */
+}
+
+input[type="submit"]:hover {
+    background-color: blueviolet;
+}
