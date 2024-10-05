@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Records</title>
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Health Records</h1>
+        <form action="HealthRecords.php" method="POST">
+            <div class="form-group">
+                <label for="animal-id">Animal ID:</label>
+                <input type="text" id="animal-id" name="animal_id" placeholder="Enter Animal ID" required>
+            </div>
+            <div class="form-group">
+                <label for="health-status">Health Status:</label>
+                <input type="text" id="health-status" name="health_status" placeholder="Enter Health Status" required>
+            </div>
+            <div class="form-group">
+                <label for="treatment">Treatment:</label>
+                <textarea id="treatment" name="treatment" placeholder="Enter Treatment Details" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn">Submit Health Record</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed Schedules</title>
+    <link rel="stylesheet" href="style4.css">
+</head>
+<body>
+    <!-- Google Translate bar at the very top of the page -->
+    <div id="google_translate_element"></div>
+    <script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Navbar moved below the translation bar -->
+    <div class="navbar">
+        <a href="animaldashboard.html">Animal Dashboard</a>
+        <a href="healthrecords.html">Health Records</a>
+        <a href="vetirinaryappoinments.html">Veterinary Appointments</a>
+        <a href="add_animal.html">Animal Registration</a>
+    </div>
+
+    <div class="container">
+        <h1>Feed Schedules for Animals</h1>
+        <form action="FeedSchedules.php" method="POST">
+            <div class="form-group">
+                <label for="animal-id">Animal ID:</label>
+                <input type="text" id="animal-id" name="animal_id" placeholder="Enter Animal ID" required>
+            </div>
+            <div class="form-group">
+                <label for="feed-type">Feed Type:</label>
+                <input type="text" id="feed-type" name="feed_type" placeholder="Enter Feed Type" required>
+            </div>
+            <div class="form-group">
+                <label for="feed-time">Feed Time:</label>
+                <input type="datetime-local" id="feed-time" name="feed_time" required>
+            </div>
+            <button type="submit" class="btn">Submit Feed Schedule</button>
+        </form>
+    </div>
+</body>
+</html>
+
+

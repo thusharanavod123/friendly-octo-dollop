@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinary Appointments</title>
+    <link rel="stylesheet" href="style6.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Veterinary Appointments</h1>
+        <form action="VeterinaryAppointments.php" method="POST">
+            <div class="form-group">
+                <label for="appointment-date">Appointment Date:</label>
+                <input type="datetime-local" id="appointment-date" name="appointment_date" required>
+            </div>
+            <div class="form-group">
+                <label for="vet-name">Veterinarian Name:</label>
+                <input type="text" id="vet-name" name="vet_name" placeholder="Enter Veterinarian Name" required>
+            </div>
+            <div class="form-group">
+                <label for="animal-id">Animal ID:</label>
+                <input type="text" id="animal-id" name="animal_id" placeholder="Enter Animal ID" required>
+            </div>
+            <button type="submit" class="btn">Schedule Appointment</button>
+        </form>
+    </div>
+</body>
+</html>
+

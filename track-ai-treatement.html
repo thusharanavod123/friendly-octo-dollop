@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Track AI Treatment Progress</title>
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style3.css">
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
+    <!-- Google Translate Container -->
+    <div id="google_translate_container">
+        <div id="google_translate_element"></div>
+    </div>
 
     <div class="container">
         <h1>Track AI Treatment Progress for Cows</h1>
 
-        <form action="/submit-treatment-progress" method="POST">
+        <form action="submit-treatment-progress.php" method="POST">
             <div class="form-group">
                 <label for="cow-id">Cow ID:</label>
                 <input type="text" id="cow-id" name="cow_id" placeholder="Enter Cow ID" required>
@@ -50,7 +60,5 @@
             <button type="submit" class="btn">Submit Progress</button>
         </form>
     </div>
-
 </body>
 </html>
-

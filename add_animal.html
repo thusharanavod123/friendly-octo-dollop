@@ -6,80 +6,109 @@
     <title>Add Animal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-    <div id="google_translate_element"></div>
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
 <body>
-    <div class="top-left-message">Register your animals</div>
+    <!-- Google Translate element for page translation -->
+    <div id="google_translate_element"></div>
+
+    <!-- Navigation bar moved below Google Translate -->
+    <nav class="nav-bar">
+        <div class="nav-links" id="navLinks">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="productpage.html">Sell & Buy</a></li>
+                <li><a href="login.html">Sign Up</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Form container for animal registration -->
     <div class="container">
+        <!-- Top-left corner message inside the container -->
+        <div class="top-left-message">Register your animals</div>
+
         <form action="add_animal.php" method="post">
             <div class="form-group">
+                <!-- User ID input -->
                 <div>
                     <label for="user_id" class="bold-label">User ID:</label>
                     <input type="text" id="user_id" name="user_id" required>
                 </div>
+                <!-- Animal Name input -->
                 <div>
                     <label for="name" class="bold-label">Animal Name:</label>
                     <input type="text" id="name" name="name" required>
                 </div>
+                <!-- Species input -->
                 <div>
                     <label for="species" class="bold-label">Species:</label>
                     <input type="text" id="species" name="species" required>
                 </div>
+                <!-- Breed input as a dropdown -->
                 <div>
                     <label for="breed" class="bold-label">Breed:</label>
-            <select id="breed" name="breed" required>
-                <option value="jersey">Jersey</option>
-                <option value="Sahiwal">Sahiwal</option>
-                <option value="Red Sindhi">Red Sindhi</option>
-                <option value="Friesian">Friesian</option>
-                <option value="Zebu">Zebu</option>
-                <option value="AFS">AFS</option>
-                <option value="Gyr">Gyr</option>
-                <option value="Girolando">Girolando</option>
-                <option value="Khillari">Khillari</option>
-                <option value="Local(Batu)">Local(Batu)</option>
-                <option value="Murrah">Murrah</option>
-                <option value="Niliravi">Niliravi</option>
-                <option value="Surti">Surti</option>
-                <option value="Crosses">Crosses</option>
-            </select><br>
-            <div>
-                <label for="gender" class="bold-label">Gender:</label>
-                <select id="gender" name="gender" required>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    
-                </select><br>
-            </div>
+                    <select id="breed" name="breed" required>
+                        <option value="jersey">Jersey</option>
+                        <option value="Sahiwal">Sahiwal</option>
+                        <option value="Red Sindhi">Red Sindhi</option>
+                        <option value="Friesian">Friesian</option>
+                        <option value="Zebu">Zebu</option>
+                        <option value="AFS">AFS</option>
+                        <option value="Gyr">Gyr</option>
+                        <option value="Girolando">Girolando</option>
+                        <option value="Khillari">Khillari</option>
+                        <option value="Local(Batu)">Local(Batu)</option>
+                        <option value="Murrah">Murrah</option>
+                        <option value="Niliravi">Niliravi</option>
+                        <option value="Surti">Surti</option>
+                        <option value="Crosses">Crosses</option>
+                    </select><br>
                 </div>
+                <!-- Gender input as a dropdown -->
+                <div>
+                    <label for="gender" class="bold-label">Gender:</label>
+                    <select id="gender" name="gender" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select><br>
+                </div>
+                <!-- Birth Date input -->
                 <div>
                     <label for="birth_date" class="bold-label">Birth Date:</label>
                     <input type="date" id="birth_date" name="birth_date">
                 </div>
+                <!-- Color input -->
                 <div>
                     <label for="color" class="bold-label">Color:</label>
-                    <input type="text" id="name" name="color" required>
+                    <input type="text" id="color" name="color" required>
                 </div>
+                <!-- Health Status input -->
                 <div>
                     <label for="health_status" class="bold-label">Health Status:</label>
                     <input type="text" id="health_status" name="health_status">
                 </div>
             </div>
+            <!-- Submit button -->
             <div class="submit-group">
                 <input type="submit" value="Add Animal">
             </div>
         </form>
     </div>
-    <script>
-  var Weglot = {"api_key":"YOUR_API_KEY"};
-</script>
-<script src="https://cdn.weglot.com/weglot.min.js"></script>
 
+    <!-- Weglot translation script -->
+    <script>
+        var Weglot = {"api_key":"YOUR_API_KEY"};
+    </script>
+    <script src="https://cdn.weglot.com/weglot.min.js"></script>
+
+    <!-- Google Translate script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
+
+
